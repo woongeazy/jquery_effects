@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jQuery Effect</title>
     <style>
-        .content {
-            width: 400px;
-            background: #eee;
-            border: 1px solid #ccc;
-        }
+      .content {
+        width: 400px;
+        background: #eee;
+        border: 1px solid #ccc;
+      }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <h1>fadeTo() 메소드 실습</h1>
-    <h2>fadeto 기본횽</h2>
+    <h2>fadeto 기본형</h2>
     <code> $("선택자").fadeTo(효과소요시간, 투명도, 콜백함수); </code>
     <h2>fadeTo 예시</h2>
     <!-- 교재 p.292~293 코딩해보세요 따라서 작성 -->
@@ -28,8 +32,8 @@
       <button class="btn3">toggleSlide</button>
     </div>
     <div>
-        <button class="btn4">fadeTo(0.3)</button>
-        <button class="btn5">fadeTo(1)</button>
+      <button class="btn4">fadeTo(0.3)</button>
+      <button class="btn5">fadeTo(1)</button>
     </div>
     <div class="box">
       <div class="content">
@@ -40,9 +44,28 @@
       </div>
     </div>
     <script>
-        $(function(){
-            
+      $(function () {
+        $(".btn1").on("click", function () {
+          $(".box").slideUp(1000, "linear", function () {
+            $(".btn1").hide();
+            $(".btn2").show();
+          });
+        });
+        $(".btn2").on("click", function () {
+          $(".box").fadeIn(1000, "linear", function () {
+            $(".btn1").show();
+          });
+        });
+        $(".btn3").on("click", function(){
+            $(".box").slideToggle(1000, "lonera");
+        });
+        $(".btn4").on("click", function(){
+            $(".box").fadeTo("fast", 0.3);
+        });
+        $(".btn5").on("click", function(){
+            $(".box").fadeTo("fast", 1);
         })
+      });
     </script>
   </body>
 </html>
