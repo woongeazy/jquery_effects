@@ -16,3 +16,6 @@
 - fadeToggle() : fadeIn, fadeOut 효과를 적용합니다.
 - slideToggle() : slideUp, slideDown 효과를 적용합니다.
 - fadeTo() : 지정한 투명도를 적용합니다.
+
+## 효과 메소드의 기본 사용법
+$("선택자").효과메소드(효과소요시간,가속도,콜백함수);
